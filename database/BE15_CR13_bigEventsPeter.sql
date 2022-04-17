@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 17. Apr 2022 um 23:23
+-- Erstellungszeit: 17. Apr 2022 um 23:44
 -- Server-Version: 10.4.22-MariaDB
 -- PHP-Version: 8.0.13
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `be15_cr13_bigeventspeter`
 --
+CREATE DATABASE IF NOT EXISTS `be15_cr13_bigeventspeter` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `be15_cr13_bigeventspeter`;
 
 -- --------------------------------------------------------
 
