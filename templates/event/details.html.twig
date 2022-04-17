@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class='row justify-content-center pt-5'>
+	<!-- Content Container -->
+	<div class='row justify-content-center content-container'>
+		<div class='card mb-3 col-11 bg-$avColor bg-opacity-10'>
+			<div class='row justify-content-around g-0'>
+				<div class='col-sm-4'>
+					<img class='card-img-top mt-3' src="{{asset('pictures/' ~ event.picture )}}" style=' height: auto;'>
+				</div>
+				<div class='col-sm-7'>
+					<div class='card-body' style='height: 35vh;'>
+						<h5 class='card-title' style='font-weight: bold;'>{{event.eventName}}</h5>
+						<h6><b>in {{event.address}}</b></h6>
+						<p class='card-text'>{{event.description}}</p>
+					</div>
+					<ul class='list-group list-group-flush'>
+						<li class='list-group-item'>
+							<a href="https://www.{{event.url}}/" class='btn btn-dark'><strong>Webpage</strong></a></li>
+						<li class='list-group-item'>
+							<strong>Capacity:</strong>
+							{{event.capacity}}</li>
+						<li class='list-group-item'>
+							<strong>Contact us by email:</strong>
+							<a href="mailto:{{event.email}}">{{event.email}}</a></li>
+						<li class='list-group-item'>
+							<strong>Telephone:</strong>
+							{{event.phone}}</li>
+						<li class='list-group-item'>
+							<strong>Date:</strong>
+							{{event.eventDate|date()}}</li>
+						<li class='list-group-item'>
+							<strong>Type of event:</strong>
+							{{event.type}}</li>
+					</ul>
+				</div>
+			</div>
+			<div class='py-2 text-center'>
+				<div class="d-flex">
+					<a href='/' class='btn btn-primary w-50 mb-1'>Back</a>
+					<a href='/edit/{{event.id}}' class='btn btn-secondary w-50 mb-1'>Edit</a>
+					<a href='/delete/{{event.id}}' class='btn btn-danger w-50 mb-1'>Delete</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="my-5"></div>
+
+{% endblock %}

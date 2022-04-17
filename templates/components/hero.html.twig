@@ -1,0 +1,48 @@
+<!-- HERO image-->
+<style>
+	.hero-image {
+		position: relative;
+		height: 500px;
+		overflow: hidden;
+		background: url({{ asset("pictures/hero.jpg")}}) no-repeat center;
+		background-size: cover;
+	}
+
+	.hero-container {
+		position: absolute;
+		top: 65%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		color: white;
+		text-transform: uppercase;
+	}
+
+	.hero-container h1 {
+		font-size: 72px;
+	}
+
+	.hero-container span {
+		border: 8px solid #5c6ee5;
+		padding: 6px 10px;
+		display: inline-block;
+	}
+
+	.hero-container p {
+		margin: 20px;
+        color: #d7dae7;
+		display: block;
+	}
+</style>
+
+
+
+<div class="hero-image">
+
+	<div class="hero-container">
+		<h1>
+			<span>Stockholm Live</span>
+		</h1>
+		<p class="des">event agency</p>
+	</div>
+</div>

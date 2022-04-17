@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	CR13 - Eventpage(Theater)
+{% endblock %}
+
+{% block body %}
+
+	{# MIDPAGE HEADLINE #}
+	<div class="midpage d-flex align-items-center justify-content-between mt-5 mb-5">
+		<p>Upcoming theatre plays:</p>
+		<a class="btn btn-outline-light me-2" href="/">Show all</a>
+	</div>
+
+	<div id="container" class="row justify-content-center p-5 g-4 mt-0 pt-0">
+
+		{% for event in events %}
+
+			{# CARD #}
+			<a class='card col-lg-3 col-md-5 col-sm-10 col-11 p-0 m-4 border-3 card-shadow text-center' href='/details/{{event.id}}'>
+				<img class='img-fluid rounded-start m-3' alt="{{event.eventName}}" src="{{asset('pictures/' ~ event.picture )}}" >
+				<div class='card-body'>
+					<h5 class='card-title' style='font-weight: bold;'>{{event.eventName}}</h5>
+				</div>
+				<ul class='list-group list-group-flush'>
+					<li class='list-group-item'>
+						<strong>Location:</strong>
+						{{event.address}}</li>
+					<li class='list-group-item'>
+						<strong>Date:</strong>
+						{{event.eventDate|date()}}</li>
+				</ul>
+			</a>
+
+		{% endfor %}
+
+	</div>
+	<div class="my-5"></div>
+
+	<script>
+		function getSelectValue() {
+			const selectedValue = document.getElementById("list").value;
+			console.log(selectedValue);
+		}
+		getSelectValue();
+	</script>
+{% endblock %}
+
